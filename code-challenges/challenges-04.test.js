@@ -10,7 +10,6 @@ const addTwo = (arr) => {
   // Solution code here...
   let newArr = []; 
 for (let index = 0; index < arr.length; index++) {
-
   newArr.push( arr[index]+2);
 }
 return newArr;
@@ -26,7 +25,7 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
-  var reg = /[wW]/g;
+  var reg = /w/g;
   var leeter = str.match(reg);
   if(leeter !== null){
     if(leeter.includes('w')){
@@ -39,6 +38,7 @@ const containsW = (str) => {
   else {
     return false;
   }
+  // return reg.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
-  var newContainsWorld = /[wW](orld)/g; 
+  var newContainsWorld = /world/g; 
   var newIN = input.match(newContainsWorld );
   if(newIN !== null){
     if(newIN.includes('world')){
@@ -80,6 +80,7 @@ const containsWorld = (input) => {
   else {
    return false;
   }
+  // return newContainsWorld.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,6 +106,7 @@ const isCapitalized = (str) => {
     else{
       return [];
     }
+  // return str.match(reg) || [];
 
 };
 
