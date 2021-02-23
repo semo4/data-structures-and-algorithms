@@ -73,8 +73,9 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let reg = /([aeiou])/g;
   var strFilter = arr.filter(element =>{
-    return element.includes('a') || element.includes('o') ||element.includes('u') ||element.includes('i') ||element.includes('e') 
+    return reg.test(element);
   });
   return strFilter;
 };
