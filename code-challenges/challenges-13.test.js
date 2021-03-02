@@ -50,14 +50,14 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
-  // let newArr = [];
-  // for(let i = 0; i<arr.length;i++){
-  //   if(arr[i].includes(':)')){
-  //     newArr.push(arr[i]);
-  //   }
+  let newArr = [];
+  for(let i = 0; i<arr.length;i++){
+    if(arr[i].includes(':)')){
+      newArr.push(arr[i]);
+    }
     
-  // }
-  // return newArr;
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,6 +70,16 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach(element=>{
+    let first = element.substring(1,4);
+    let second = element.substring(6,9);
+    let last = element.substring(10);
+    newArr.push(first+second+last);
+
+  });
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,6 +92,13 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let newArr = [];
+  for(let i =0; i<str.length; i++){
+    if(i%2 !== 0){
+      newArr.push(str[i]);
+    }
+  } 
+  return newArr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,6 +109,13 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  let check = true;
+ arr.forEach(element=>{
+   if(!element.includes(':)')){
+     check = false;
+   }
+ })
+ return check;
 };
 
 /* ------------------------------------------------------------------------------------------------
