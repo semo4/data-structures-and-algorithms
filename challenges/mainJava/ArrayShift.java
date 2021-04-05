@@ -15,7 +15,7 @@ public class ArraysShift {
             newArray[j]= arr[j];
         }
         for(int i =newArray.length-2; i > midValue ; i--){
-            newArray[i+1] = newArray[i];
+            newArray[i] = newArray[i-1];
         }
         newArray[midValue] = num;
         return newArray;
