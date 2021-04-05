@@ -16,5 +16,7 @@ i use for loop and Arrays class to print it
 ## Solution
 <!-- Embedded whiteboard image -->
 
+
  ![images](images/reverse-array.png)
+
 
