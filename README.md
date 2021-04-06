@@ -33,8 +33,12 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 - [JavaScript CodeChallenge 13](code-challenges/challenges-13)
 
 # Java
-- [Java CodeChallenge 01](challenges/ArrayReverse)
-- [Java CodeChallenge 02](challenges/ArrayShift)
+- [Java CodeChallenge 01](challenges/mainJava/ArrayReverse)
+- [Java CodeChallenge 02](challenges/mainJava/ArrayShift)
+- [Java CodeChallenge Test 02](challenges/testJava/insertShiftArray)
+- [Java CodeChallenge 03](challenges/mainJava/BinarySearch)
+- [Java CodeChallenge Test 03](challenges/testJava/BinarySearch)
+
 
 
 
