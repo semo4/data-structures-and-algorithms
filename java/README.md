@@ -38,3 +38,19 @@ i use for loop to store item to new array then use for loop to shift item to rig
  ![images](./assets/insert-shift-array.png)
 
 
+ # Challenge Summary
+<!-- Short summary or background information -->
+- take an array of number and  number return the index of number if it exist and -1 if it is not exist
+## Challenge Description
+<!-- Description of the challenge -->
+it take an array and number and work with binary search and return the index of number 
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+i use while loop to search the index of number if it in array or not
+
+## Solution
+<!-- Embedded whiteboard image -->
+ ![images](./assets/binary-search.png)
+
+
