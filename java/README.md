@@ -67,6 +67,9 @@ i use while loop to search the index of number if it in array or not
 -i create class node to initial the node value and pointer 
 - i create class linkedList to create list of node 
 - I create class main to run the code
+- insert O(n)
+- includes O(n)
+- toString O(n)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
