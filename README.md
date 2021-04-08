@@ -38,6 +38,8 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 - [Java CodeChallenge Test 02](challenges/testJava/insertShiftArray)
 - [Java CodeChallenge 03](challenges/mainJava/BinarySearch)
 - [Java CodeChallenge Test 03](challenges/testJava/BinarySearch)
+- [Java CodeChallenge  04](challenges/mainJava/BinarySearch)
+
 
 
 

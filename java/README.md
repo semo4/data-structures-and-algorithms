@@ -54,3 +54,22 @@ i use while loop to search the index of number if it in array or not
  ![images](./assets/binary-search.png)
 
 
+# Singly Linked List
+<!-- Short summary or background information -->
+- it is node connected with pointer 
+
+## Challenge
+<!-- Description of the challenge -->
+- create linkedList class with three function insert includes and toString.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+-i create class node to initial the node value and pointer 
+- i create class linkedList to create list of node 
+- I create class main to run the code
+
+## API
+<!-- Description of each method publicly available to your Linked List -->
+1. insert take an integer to inserted it to the LinkedList
+2. include take an integer  to check if it exist in the list or not if exist return true if not false
+3. toString print the component of the linkedList
