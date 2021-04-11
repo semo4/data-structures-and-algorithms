@@ -56,5 +56,64 @@ public class LinkedList {
             return false;
         }
     }
+    
+    public void append(int value) {
+        if (isEmpty()) {
+            Node y = new Node(value);
+            y.next = h;
+            h = y;
+        } else {
+            Node k = h;
+            while (k.next != null) {
+                k = k.next;
+            }
+            k.next = new Node(value);
+        }
+    }
+
+    public void addBefore(int value, int newValue) {
+        if (!includes(value)) {
+            System.out.println("the value " + value + "Does not Exist");
+            throw new NullPointerException("the value Does not Exist");
+        } else {
+            Node k = h;
+            if (k.data == value) {
+                Node y = new Node(newValue);
+                y.next = k;
+                h = y;
+            } else {
+                while (k.next.data != value) {
+                    k = k.next;
+                }
+                Node y = new Node(newValue);
+                y.next = k.next;
+                k.next = y;
+            }
+
+        }
+
+    }
+
+    public void addAfter(int value, int newValue) {
+        if (!includes(value)) {
+            // System.out.println("the value "+ value+ " Does not Exist");
+            throw new NullPointerException("the value Does not Exist");
+        } else {
+            Node k = h;
+            if (k.data == value) {
+                Node y = new Node(newValue);
+                y.next = k;
+                h = y;
+            } else {
+                while (k.data != value) {
+                    k = k.next;
+                }
+                Node y = new Node(newValue);
+                Node j = k.next;
+                k.next = y;
+                y.next = j;
+            }
+        }
+    }
 
 }
