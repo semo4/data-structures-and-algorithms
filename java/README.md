@@ -76,3 +76,26 @@ i use while loop to search the index of number if it in array or not
 1. insert take an integer to inserted it to the LinkedList
 2. include take an integer  to check if it exist in the list or not if exist return true if not false
 3. toString print the component of the linkedList
+
+
+# Code Challenge  lab 06
+# Challenge Summary
+<!-- Short summary or background information -->
+it is node connected with pointer and store value in it 
+
+## Challenge Description
+<!-- Description of the challenge -->
+- create new three function to add bode in different position
+- append(value) add the new node to the last of linkedList
+- Add Before(value , new value) add new node in specific position before the given value
+- Add After (value, new value) add new node in the specific position after given value
+
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- append O(n)
+- addBefore O(n)
+- addAfter O(n)
+## Solution
+<!-- Embedded whiteboard image --> 
+ ![images](./assets/append.png)
