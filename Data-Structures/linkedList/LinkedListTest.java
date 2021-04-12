@@ -85,5 +85,60 @@ public class LinkedListTest {
         String expicted1 = "{5} -> {6} -> {4} -> {9} -> {2} -> NULL";
         assertEquals("the output is", expicted1, n.toString());
     }
+
+
+    @Test
+    public void testIndexNode() {
+        LinkedList l = new LinkedList();
+        l.insert(5);
+        l.insert(6);
+        l.insert(4);
+        l.insert(9);
+        int expicted = 4;
+        int result = l.indexNode(2);
+        assertEquals("the output is", expicted, result);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testIndexNodeGrater() {
+        LinkedList l = new LinkedList();
+        l.insert(5);
+        l.insert(6);
+        l.insert(4);
+        l.insert(9);
+        int result = l.indexNode(6);
+
+    }
+
+    @Test
+    public void testIndexNodeLast() {
+        LinkedList l = new LinkedList();
+        l.insert(5);
+        l.insert(6);
+        l.insert(4);
+        l.insert(9);
+        int expicted = 9;
+        int result = l.indexNode(3);
+        assertEquals("the output is", expicted, result);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testIndexNodeNegative() {
+        LinkedList l = new LinkedList();
+        l.insert(5);
+        l.insert(6);
+        l.insert(4);
+        l.insert(9);
+        int result = l.indexNode(-2);
+    }
+
+    @Test
+    public void testIndexNodeOne() {
+        LinkedList l = new LinkedList();
+        l.insert(5);
+        int result = l.indexNode(0);
+        int expicted = 5;
+        assertEquals("the output is", expicted, result);
+    }
     
 }

@@ -115,5 +115,31 @@ public class LinkedList {
             }
         }
     }
+    
+    public int indexNode(int value) {
+        if (value < 0) {
+            throw new NullPointerException("The value out of length");
+        } else if (isEmpty()) {
+            throw new NullPointerException("The value out of length");
+        } else {
+            Node j = h;
+            int length = 0;
+            while (j != null) {
+                j = j.next;
+                length++;
+            }
+            if (length < value) {
+                throw new NullPointerException("The value out of length");
+            } else {
+                int i = 0;
+                Node k = h;
+                while (k.next != null && i != value) {
+                    k = k.next;
+                    i++;
+                }
+                return k.data;
+            }
+        }
+    }
 
 }
