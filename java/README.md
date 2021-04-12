@@ -99,3 +99,21 @@ it is node connected with pointer and store value in it
 ## Solution
 <!-- Embedded whiteboard image --> 
  ![images](./assets/append.png)
+
+
+# Code Challenge  lab 07
+ # Challenge Summary
+<!-- Short summary or background information -->
+- create function that take an index of node and retrun the value in that index 
+
+## Challenge Description
+<!-- Description of the challenge -->
+create function that take int value as input and return the value in that index if it exist if not return Exception
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- indexNode O(n)
+
+## Solution
+<!-- Embedded whiteboard image -->
+ ![images](./assets/indexNode.png)
