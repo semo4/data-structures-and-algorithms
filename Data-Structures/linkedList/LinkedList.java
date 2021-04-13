@@ -142,4 +142,27 @@ public class LinkedList {
         }
     }
 
+
+    public LinkedList zipLists(LinkedList l1, LinkedList l2) {
+        if (l1.isEmpty()) {
+            return l2;
+        } else if (l2.isEmpty()) {
+            return l1;
+        } else {
+            Node k = l1.h;
+            Node p = k.next;
+            Node j = l2.h;
+
+            while (p != null && j != null) {
+                k.next = j;
+                l2.h = j.next;
+                j.next = p;
+                k = p;
+                p = k.next;
+                j = l2.h;
+            }
+            // k.next = j;
+            return l1;
+        }
+    }
 }

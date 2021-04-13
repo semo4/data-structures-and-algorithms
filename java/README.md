@@ -117,3 +117,21 @@ create function that take int value as input and return the value in that index 
 ## Solution
 <!-- Embedded whiteboard image -->
  ![images](./assets/indexNode.png)
+
+
+ # Code Challenge  lab 08
+ # Challenge Summary
+<!-- Short summary or background information -->
+- create function that take to linked list and zip them to gather and return new linked list with all node from two list 
+
+## Challenge Description
+<!-- Description of the challenge -->
+- create function that take two linked list and check first if they empty or not if empty it will return the other list if not it will combine the two list to gather and return the new list with all value from the two list
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- zipLinkedList O(n)
+
+## Solution
+<!-- Embedded whiteboard image -->
+ ![images](./assets/ziplinkedlist.png)
