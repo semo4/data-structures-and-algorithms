@@ -3,13 +3,16 @@ package Data-Structures.linkedList;
 public class Main {
     public static void main(String[] args) {
         LinkedList l = new LinkedList();
-        l.insert(5);
-        l.insert(6);
-        l.insert(9);
+        LinkedList l1 = new LinkedList();
+        l1.insert(5);
+        l1.insert(6);
+        l1.insert(3);
 
-        l.append(8);
-        l.addBefore(6, 1);
-        System.out.println(l.toString());
-        l.addAfter(10, 0);
+        LinkedList l2 = new LinkedList();
+        l2.insert(5);
+        l2.insert(7);
+        l1.insert(4);
+
+        System.out.println(l.zipLists(l1, l2));
     }
 }

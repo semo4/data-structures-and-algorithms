@@ -140,5 +140,54 @@ public class LinkedListTest {
         int expicted = 5;
         assertEquals("the output is", expicted, result);
     }
+
+    @Test
+    public void testZipLinkedList() {
+        LinkedList l = new LinkedList();
+        LinkedList l1 = new LinkedList();
+        l1.insert(5);
+        l1.insert(6);
+        l1.insert(4);
+
+        LinkedList l2 = new LinkedList();
+        l2.insert(5);
+        l2.insert(7);
+
+        String out = "{5} -> {5} -> {6} -> {7} -> {4} -> NULL";
+        assertEquals("the output is", out, l.zipLists(l1, l2).toString());
+    }
+
+    @Test
+    public void testZipLinkedListTwo() {
+        LinkedList l = new LinkedList();
+        LinkedList l1 = new LinkedList();
+        l1.insert(5);
+        l1.insert(6);
+
+        LinkedList l2 = new LinkedList();
+        l2.insert(5);
+        l2.insert(7);
+        l1.insert(4);
+
+        String out = "{5} -> {5} -> {6} -> {7} -> {4} -> NULL";
+        assertEquals("the output is", out, l.zipLists(l1, l2).toString());
+    }
+
+    @Test
+    public void testZipLinkedListThree() {
+        LinkedList l = new LinkedList();
+        LinkedList l1 = new LinkedList();
+        l1.insert(5);
+        l1.insert(6);
+        l1.insert(3);
+
+        LinkedList l2 = new LinkedList();
+        l2.insert(5);
+        l2.insert(7);
+        l1.insert(4);
+
+        String out = "{5} -> {5} -> {6} -> {7} -> {3} -> {4} -> NULL";
+        assertEquals("the output is", out, l.zipLists(l1, l2).toString());
+    }
     
 }
