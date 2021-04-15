@@ -137,3 +137,7 @@ create function that take int value as input and return the value in that index 
 ## Solution
 <!-- Embedded whiteboard image -->
  ![images](./assets/ziplinkedlist.png)
+
+
+
+ 
