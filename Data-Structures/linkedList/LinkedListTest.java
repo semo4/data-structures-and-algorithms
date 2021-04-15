@@ -2,6 +2,7 @@ package Data-Structures.linkedList;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+
 public class LinkedListTest {
     @Test
     public void testEmpty() {
@@ -85,7 +86,6 @@ public class LinkedListTest {
         String expicted1 = "{5} -> {6} -> {4} -> {9} -> {2} -> NULL";
         assertEquals("the output is", expicted1, n.toString());
     }
-
 
     @Test
     public void testIndexNode() {
@@ -189,5 +189,4 @@ public class LinkedListTest {
         String out = "{5} -> {5} -> {6} -> {7} -> {3} -> {4} -> NULL";
         assertEquals("the output is", out, l.zipLists(l1, l2).toString());
     }
-    
 }

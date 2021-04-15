@@ -77,6 +77,8 @@ i use while loop to search the index of number if it in array or not
 2. include take an integer  to check if it exist in the list or not if exist return true if not false
 3. toString print the component of the linkedList
 
+![images](./assets/linkedlist.png)
+
 
 # Code Challenge  lab 06
 # Challenge Summary
