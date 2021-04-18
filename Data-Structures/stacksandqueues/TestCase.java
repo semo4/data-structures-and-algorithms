@@ -130,4 +130,32 @@ public class TestCase {
         Queue q = new Queue();
         assertEquals(new NullPointerException(), q.peek());
     }
+
+
+    @Test(expected = NoSuchElementException.class)
+    public void testPseudoQueueEmpty() {
+        PseudoQueue p = new PseudoQueue();
+        assertEquals(new NoSuchElementException(), p.dequeue());
+    }
+
+    @Test
+    public void testPseudoQueueEnqueue() {
+        PseudoQueue p = new PseudoQueue();
+        p.enqueue(20);
+        p.enqueue(15);
+        p.enqueue(10);
+        p.enqueue(5);
+        assertEquals("the outout", 5, p.stack1.peek());
+    }
+
+    @Test
+    public void testPseudoQueueDeEnqueue() {
+        PseudoQueue p = new PseudoQueue();
+        p.enqueue(20);
+        p.enqueue(15);
+        p.enqueue(10);
+        p.enqueue(5);
+      
+        assertEquals("the outout", 20, p.dequeue());
+    }
 }
