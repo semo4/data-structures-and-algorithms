@@ -48,3 +48,27 @@ the last one is peek to print the value that on the first node on Queue
 - create enqueue() function that take an value as input then insert it on tail if not empty it empty will add to the front of Queue
 - create dequeue() function that delete the node on the front of the queue and return the value that was in the front 
 - create peek() function that print the value in the front of Queue
+
+
+
+# code challenge 11
+
+# Challenge Summary
+<!-- Short summary or background information -->
+
+## Challenge Description
+<!-- Description of the challenge -->
+- Implement a Queue using two Stacks. This PseudoQueue class should internally utilize two stack objects implemented in previous lab. The PseudoClass should have the following methods:
+
+- enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
+- dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- enqueue(value) O(1)
+- dequeue() O(n)
+
+## Solution
+<!-- Embedded whiteboard image -->
+
+![images](assets/queue.jpg)
