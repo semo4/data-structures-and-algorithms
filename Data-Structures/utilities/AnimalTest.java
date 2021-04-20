@@ -52,4 +52,22 @@ public class AnimalTest {
         assertEquals("the output is ",null,a.dequeue(null));
     }
 
+    @Test
+    public void testMultiBracketValidationTrue() {
+        MultiBracketValidation m = new MultiBracketValidation();
+        assertTrue("the output is ", m.multiBracketValidation("()[[Extra Characters]]"));
+    }
+
+    @Test
+    public void testMultiBracketValidation() {
+        MultiBracketValidation m = new MultiBracketValidation();
+        assertFalse("the output is ", m.multiBracketValidation("[({}]"));
+    }
+
+    @Test
+    public void testMultiBracketValidation() {
+        MultiBracketValidation m = new MultiBracketValidation();
+        assertTrue("the output is ", m.multiBracketValidation(""));
+    }
+
 }
