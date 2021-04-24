@@ -111,28 +111,26 @@ public class LinkedList {
         }
     }
 
-    public int indexNode(int value) {
-        if (isEmpty() || value < 0) {
+    public int kthValue(int k) {
+        Node current = h;
+        Node pointer = h;
+
+        if (isEmpty() || k < 0) {
             throw new NullPointerException("The value out of length");
-        } else {
-            Node pointer = h;
-            int length = 0;
-            while (pointer != null) {
-                pointer = pointer.next;
-                length++;
-            }
-            if (length < value) {
-                throw new NullPointerException("The value out of length");
-            } else {
-                int i = 0;
-                Node pointerTwo = h;
-                while (pointerTwo.next != null && i != value) {
-                    pointerTwo = pointerTwo.next;
-                    i++;
-                }
-                return pointerTwo.data;
-            }
         }
+        for (int i = 0; i < k; i++) {
+            try {
+                pointer = pointer.next;
+            } catch (NullPointerException th) {
+                throw new NullPointerException("The value out of length");
+            }
+
+        }
+        while (pointer.next != null) {
+            pointer = pointer.next;
+            current = current.next;
+        }
+        return current.data;
     }
 
     public LinkedList zipLists(LinkedList l1, LinkedList l2) {
