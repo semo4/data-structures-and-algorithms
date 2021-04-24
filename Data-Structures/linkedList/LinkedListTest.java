@@ -16,7 +16,7 @@ public class LinkedListTest {
         l.insert(5);
         l.insert(6);
         l.insert(9);
-        String expicted = "{5} -> {6} -> {9} -> NULL";
+        String expicted = "{9} -> {6} -> {5} -> NULL";
         assertEquals("the output is", expicted, l.toString());
     }
 
