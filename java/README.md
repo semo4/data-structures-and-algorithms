@@ -67,7 +67,7 @@ Binary Search is an algorithm that used to search for a certain element within a
 -i create class node to initial the node value and pointer 
 - i create class linkedList to create list of node 
 - I create class main to run the code
-- insert O(n)
+- insert O(1)
 - includes O(n)
 - toString O(n)
 
