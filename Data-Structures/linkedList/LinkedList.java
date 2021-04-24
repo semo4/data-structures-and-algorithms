@@ -17,10 +17,10 @@ public class LinkedList {
         if (isEmpty()) {
             return null;
         } else {
-            Node k = h;
-            while (k != null) {
-                msg = msg + "{" + k.data + "}" + " -> ";
-                k = k.next;
+            Node pointer = h;
+            while (pointer != null) {
+                msg = msg + "{" + pointer.data + "}" + " -> ";
+                pointer = pointer.next;
             }
             msg = msg + "NULL";
             return msg;
@@ -28,17 +28,13 @@ public class LinkedList {
     }
 
     public void insert(int d) {
+        Node newNode = new Node(d);
         if (isEmpty()) {
-            Node y = new Node(d);
-            y.next = h;
-            h = y;
+            newNode.next = h;
+            h = newNode;
         } else {
-            Node k = h;
-            while (k.next != null) {
-                k = k.next;
-                ;
-            }
-            k.next = new Node(d);
+            newNode.next = h;
+            h = newNode;
         }
     }
 
@@ -46,28 +42,28 @@ public class LinkedList {
         if (isEmpty()) {
             return false;
         } else {
-            Node k = h;
-            while (k.next != null) {
-                if (k.data == d) {
+            Node pointer = h;
+            while (pointer != null) {
+                if (pointer.data == d) {
                     return true;
                 }
-                k = k.next;
+                pointer = pointer.next;
             }
             return false;
         }
     }
-    
+
     public void append(int value) {
         if (isEmpty()) {
-            Node y = new Node(value);
-            y.next = h;
-            h = y;
+            Node newNode = new Node(value);
+            newNode.next = h;
+            h = newNode;
         } else {
-            Node k = h;
-            while (k.next != null) {
-                k = k.next;
+            Node pointer = h;
+            while (pointer.next != null) {
+                pointer = pointer.next;
             }
-            k.next = new Node(value);
+            pointer.next = new Node(value);
         }
     }
 
@@ -76,18 +72,18 @@ public class LinkedList {
             System.out.println("the value " + value + "Does not Exist");
             throw new NullPointerException("the value Does not Exist");
         } else {
-            Node k = h;
-            if (k.data == value) {
-                Node y = new Node(newValue);
-                y.next = k;
-                h = y;
+            Node pointer = h;
+            if (pointer.data == value) {
+                Node newNode = new Node(newValue);
+                newNode.next = pointer;
+                h = newNode;
             } else {
-                while (k.next.data != value) {
-                    k = k.next;
+                while (pointer.next.data != value) {
+                    pointer = pointer.next;
                 }
-                Node y = new Node(newValue);
-                y.next = k.next;
-                k.next = y;
+                Node newNode = new Node(newValue);
+                newNode.next = pointer.next;
+                pointer.next = newNode;
             }
 
         }
@@ -96,52 +92,48 @@ public class LinkedList {
 
     public void addAfter(int value, int newValue) {
         if (!includes(value)) {
-            // System.out.println("the value "+ value+ " Does not Exist");
             throw new NullPointerException("the value Does not Exist");
         } else {
-            Node k = h;
-            if (k.data == value) {
-                Node y = new Node(newValue);
-                y.next = k;
-                h = y;
+            Node pointer = h;
+            if (pointer.data == value) {
+                Node newNode = new Node(newValue);
+                newNode.next = pointer;
+                h = newNode;
             } else {
-                while (k.data != value) {
-                    k = k.next;
+                while (pointer.data != value) {
+                    pointer = pointer.next;
                 }
-                Node y = new Node(newValue);
-                Node j = k.next;
-                k.next = y;
-                y.next = j;
+                Node newNode = new Node(newValue);
+                Node pointerTwo = pointer.next;
+                pointer.next = newNode;
+                newNode.next = pointerTwo;
             }
         }
     }
-    
+
     public int indexNode(int value) {
-        if (value < 0) {
-            throw new NullPointerException("The value out of length");
-        } else if (isEmpty()) {
+        if (isEmpty() || value < 0) {
             throw new NullPointerException("The value out of length");
         } else {
-            Node j = h;
+            Node pointer = h;
             int length = 0;
-            while (j != null) {
-                j = j.next;
+            while (pointer != null) {
+                pointer = pointer.next;
                 length++;
             }
             if (length < value) {
                 throw new NullPointerException("The value out of length");
             } else {
                 int i = 0;
-                Node k = h;
-                while (k.next != null && i != value) {
-                    k = k.next;
+                Node pointerTwo = h;
+                while (pointerTwo.next != null && i != value) {
+                    pointerTwo = pointerTwo.next;
                     i++;
                 }
-                return k.data;
+                return pointerTwo.data;
             }
         }
     }
-
 
     public LinkedList zipLists(LinkedList l1, LinkedList l2) {
         if (l1.isEmpty()) {
@@ -149,20 +141,38 @@ public class LinkedList {
         } else if (l2.isEmpty()) {
             return l1;
         } else {
-            Node k = l1.h;
-            Node p = k.next;
-            Node j = l2.h;
+            Node pointer = l1.h;
+            Node pointerTwo = pointer.next;
+            Node pointerthree = l2.h;
 
-            while (p != null && j != null) {
-                k.next = j;
-                l2.h = j.next;
-                j.next = p;
-                k = p;
-                p = k.next;
-                j = l2.h;
+            while (pointerTwo != null && pointerthree != null) {
+                pointer.next = pointerthree;
+                l2.h = pointerthree.next;
+                pointerthree.next = pointerTwo;
+                pointer = pointerTwo;
+                pointerTwo = pointer.next;
+                pointerthree = l2.h;
             }
-            // k.next = j;
+            // pointer.next = j;
             return l1;
         }
     }
+
+    public LinkedList reverseLinkedlist(LinkedList l) {
+        LinkedList newl = new LinkedList();
+        Node pointer = l.h;
+        while (pointer != null) {
+            Node newNode = new Node(pointer.data);
+            if (newl.isEmpty()) {
+                newl.h = newNode;
+
+            } else {
+                newNode.next = newl.h;
+                newl.h = newNode;
+            }
+            pointer = pointer.next;
+        }
+        return newl;
+    }
+
 }
