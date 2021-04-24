@@ -101,6 +101,8 @@ it is node connected with pointer and store value in it
 ## Solution
 <!-- Embedded whiteboard image --> 
  ![images](./assets/append.png)
+ ![images](./assets/append2.jpg)
+
 
 
 # Code Challenge  lab 07
