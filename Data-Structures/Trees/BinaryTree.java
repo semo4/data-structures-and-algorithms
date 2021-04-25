@@ -63,5 +63,26 @@ public class BinaryTree extends BinarySearchTree{
         return items;
     }
 
+    public int findMaximumValue() {
+        return findMaximumValue(this.root, this.root.data);
+    }
+
+    public int findMaximumValue(Node curr, int max) {
+        if (curr == null) {
+            return max;
+        }
+        if (curr.data >= max) {
+            max = curr.data;
+        }
+        int maxFromLeft = findMaximumValue(curr.left, max);
+        int maxFromRight = findMaximumValue(curr.right, max);
+        if (maxFromLeft > maxFromRight) {
+            max = maxFromLeft;
+        } else {
+            max = maxFromRight;
+        }
+        return max;
+    }
+
 
 }

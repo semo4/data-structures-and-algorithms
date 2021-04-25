@@ -57,4 +57,18 @@ public class AppTest {
         ArrayList<Integer> exp = t.postOrder();
         assertEquals("output is  ",exp ,t.postOrder());
     }
+    
+    @Test
+    public void testFindMaxValueInTree() {
+        BinaryTree t = new BinaryTree();
+        t.add(10);
+        t.add(8);
+        t.add(12);
+        t.add(11);
+        t.add(9);
+        t.add(7);
+        t.add(13);
+        int exp = 13;
+        assertEquals("output is  ", exp, t.findMaximumValue());
+    }
 }
