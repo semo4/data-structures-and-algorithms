@@ -30,3 +30,22 @@
 
 - void add(int value) - takes in a value and add the value in the correct spot in BST.
 - boolean contains(int value) - search the tree if the value is in the tree. Return true or false.
+
+*******************************************************************************************
+
+# Challenge Summary
+<!-- Short summary or background information -->
+Find the Maximum Value in a Binary Tree
+## Challenge Description
+<!-- Description of the challenge -->
+Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+The solution will use a helper method that takes in a current node and also the maximum value found so far and return the max. Using recursion, first input the root of the tree and the value of the root into the helper method. The method will first check if the node is null or not. If it is, then return the max immediately. Otherwise, check if the current node value is greater than the max and change the max accordingly. Then recurse through the left and the right child nodes while passing in the current max. It is left to assume that the recursion will return the max of the left subtree and the right subtree and so at the end, just compare the two max and whichever is bigger we would return.
+
+This implemenation would takes O(n) time since we have to traverse through every nodes and O(1) space since we only store the current max, left max and right max.
+
+## Solution
+<!-- Embedded whiteboard image -->
+ ![images](./assets/max.jpg)

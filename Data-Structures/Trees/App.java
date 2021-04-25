@@ -20,6 +20,7 @@ public class App {
         System.out.println(t.preOrder());
         System.out.println(t.inOrder());
         System.out.println(t.postOrder());
+        System.out.println(t.findMaximumValue());
 
     }
 }
