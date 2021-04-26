@@ -71,4 +71,39 @@ public class AppTest {
         int exp = 13;
         assertEquals("output is  ", exp, t.findMaximumValue());
     }
+
+       @Test(expected=NullPointerException.class)
+    public void testEmptyBreadthFirst() {
+        BinaryTree t = new BinaryTree();
+
+        assertEquals(new NullPointerException("Tree is Empty") ,t.breadthFirst());
+    }
+    @Test
+    public void testBreadthFirstOneValue() {
+        BinaryTree t = new BinaryTree();
+        t.add(10);
+        assertTrue("output is  ", t.breadthFirst().size() == 1);
+    }
+    @Test
+    public void testBreadthFirstMultiValue() {
+
+        BinaryTree t = new BinaryTree();
+        t.add(10);
+        t.add(8);
+        t.add(12);
+        t.add(11);
+        t.add(9);
+        t.add(7);
+        t.add(13);
+
+        ArrayList<Integer> exp = new ArrayList<Integer>();
+        exp.add(10);
+        exp.add(8);
+        exp.add(12);
+        exp.add(7);
+        exp.add(9);
+        exp.add(11);
+        exp.add(13);
+        assertEquals("output is  ",exp ,t.breadthFirst());
+    }
 }

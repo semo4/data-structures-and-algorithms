@@ -84,5 +84,31 @@ public class BinaryTree extends BinarySearchTree{
         return max;
     }
 
+      public ArrayList<Integer> breadthFirst(){
+
+        return breadthFirst(this.root);
+    }
+    public ArrayList<Integer> breadthFirst(Node curr ){
+        Queue<Node> q = new LinkedList<Node>();
+        ArrayList<Integer> items = new ArrayList<Integer>();
+        if(curr == null){
+           throw new NullPointerException("Empty tree");
+        }else{
+            q.add(curr);
+            items.add(curr.data);
+            while(!q.isEmpty()){
+                Node temp = q.poll();
+                if(temp.left!=null){
+                    q.add(temp.left);
+                    items.add(temp.left.data);
+                }
+                if(temp.right!=null){
+                    q.add(temp.right);
+                    items.add(temp.right.data);
+                }
+            }
+            return items;
+        }
+    }
 
 }
