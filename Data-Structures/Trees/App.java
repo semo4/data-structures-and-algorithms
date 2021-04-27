@@ -22,5 +22,8 @@ public class App {
         System.out.println(t.postOrder());
         System.out.println(t.findMaximumValue());
 
+         FizzBuzzTree n = new FizzBuzzTree();
+         System.out.println(n.fizzBuzzTree(t).preOrder());
+
     }
 }
