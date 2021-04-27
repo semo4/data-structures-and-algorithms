@@ -64,3 +64,26 @@ Time complexity of this is O(n) since we have to go through every nodes. Space c
 
 # Solution
  ![images](./assets/breadth.jpg)
+
+
+ ************************************************************************************
+# Fizz Buzz Tree
+
+#  Challenge Summary
+Conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree.
+# Challenge Description
+
+- Write a function called FizzBuzzTree which takes a tree as an argument. Without utilizing any of the built-in methods available to your language, determine weather or not the value of each node is divisible by 3, 5 or both, and change the value of each of the nodes:
+
+- If the value is divisible by 3, replace the value with “Fizz”
+- If the value is divisible by 5, replace the value with “Buzz”
+- If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+- Return the tree with its new values.
+
+# Approach & Efficiency
+The approach is fairly straightforward. Traverse the tree using any sort of traversal (I use preorder traversal in my code) and for each node, checks if its value is divisible by 3, 5, or both and change the values according to the problem domain. Then recurse through all other nodes until null node has been hit.
+
+Time complexity of this would be O(n) since we have to visit every nodes to check for its value.
+
+# Solution
+ ![images](./assets/fizz.jpg)

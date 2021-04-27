@@ -106,4 +106,50 @@ public class AppTest {
         exp.add(13);
         assertEquals("output is  ",exp ,t.breadthFirst());
     }
+
+    //********************************************
+    // FizzBuzz 
+    //
+     @Test
+    public void testFizzBuzzTreeEmpty(){
+        BinaryTree b = new BinaryTree();
+        FizzBuzzTree f = new FizzBuzzTree();
+        assertTrue("the tree is empty", f.fizzBuzzTree(b).isEmpty());
+    }
+    @Test
+    public void testFizzBuzzTreeDiviedByThree(){
+        BinaryTree b = new BinaryTree();
+        b.add(3);
+        FizzBuzzTree f = new FizzBuzzTree();
+        ArrayList<String> exp = new ArrayList<String>();
+        exp.add("Fizz");
+        assertEquals("the tree is Fizz",exp ,f.fizzBuzzTree(b).preOrder());
+    }
+    @Test
+    public void testFizzBuzzTreeDiviedByFive(){
+        BinaryTree b = new BinaryTree();
+        b.add(5);
+        FizzBuzzTree f = new FizzBuzzTree();
+        ArrayList<String> exp = new ArrayList<String>();
+        exp.add("Buzz");
+        assertEquals("the tree is Buzz",exp ,f.fizzBuzzTree(b).preOrder());
+    }
+    @Test
+    public void testFizzBuzzTreeDiviedByThreeAndFive(){
+        BinaryTree b = new BinaryTree();
+        b.add(15);
+        FizzBuzzTree f = new FizzBuzzTree();
+        ArrayList<String> exp = new ArrayList<String>();
+        exp.add("FizzBuzz");
+        assertEquals("the tree is Buzz",exp ,f.fizzBuzzTree(b).preOrder());
+    }
+    @Test
+    public void testFizzBuzzTreeNotDiviedByThreeAndFive(){
+        BinaryTree b = new BinaryTree();
+        b.add(8);
+        FizzBuzzTree f = new FizzBuzzTree();
+        ArrayList<String> exp = new ArrayList<String>();
+        exp.add("8");
+        assertEquals("the tree is Buzz",exp ,f.fizzBuzzTree(b).preOrder());
+    }
 }
