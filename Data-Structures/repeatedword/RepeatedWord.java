@@ -15,16 +15,17 @@ public class RepeatedWord {
         System.out.println(getWord(text));
     }
 
-    public static String getWord(String text){
-        String [] words = text.toLowerCase().split(" ");
+      public static String getWord(String text){
+        String [] words = text.toLowerCase().replace(",", "").split(" ");
+
+        Hashtable<String, String> h= new Hashtable<String, String>();
         String res = "";
         for (int i = 0; i < words.length; i++) {
-            for (int j = 1; j < words.length; j++) {
-                if(words[i].equals(words[j]) && i !=j){
-                    res =  words[i];
-                    return res;
-                }
 
+            if(h.contains(words[i])){
+                return words[i];
+            }else{
+                h.put(words[i],words[i]);
             }
         }
         return "";
