@@ -115,5 +115,30 @@ public class BinaryTree<T> extends BinarySearchTree{
         }
     }
 
+
+      public  ArrayList<T> tree_Intersection(BinaryTree treeOne, BinaryTree treeTwo){
+        ArrayList<T> itemsTreeOne ;
+        ArrayList<T> itemsTreeTwo ;
+        if(treeOne.root == null && treeTwo.root==null){
+            return null;
+        }else if(treeOne.root == null || treeTwo.root==null){
+            return null;
+        }
+        itemsTreeOne = treeOne.inOrder();
+        itemsTreeTwo = treeTwo.inOrder();
+        ArrayList<T> s = new ArrayList<>();
+        int j =0;
+        for(int i =0; i< itemsTreeOne.size();i++){
+           while(j< itemsTreeTwo.size()){
+                if(itemsTreeOne.get(i).equals(itemsTreeTwo.get(j))){
+                    s.add(itemsTreeOne.get(i));
+                }
+                j++;
+            }
+            j=0;
+        }
+        return s;
+    }
+
 }
 
