@@ -87,3 +87,29 @@ Time complexity of this would be O(n) since we have to visit every nodes to chec
 
 # Solution
  ![images](./assets/fizz.jpg)
+
+
+ ******************************************************************************************************
+# TreeIntersection
+
+ # Challenge Summary
+<!-- Description of the challenge -->
+Write a function called tree_intersection that takes two binary tree parameters and return a set of values found in both trees.
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+ ![images](./assets/treeintersaction.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- this solution would useing the tree pre defined inorder to get the value inside the tree as array 
+do the for loop one the first tree and while loop on the second tree and check the value from the first tree with entaier value in the second tree if it equal store the value in set if not pass to next value after finish return the set. 
+
+- tree_Intersaction(treeOne, treeTwo)-----> O(n2)
+- space ------> O(n) 
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+- create function take two binary tree and use predefined function in tree inOrder() to get the value from two tree ass array 
+- check value from the first tree with whole value from the second if equle store it in set if not pass to the next value 
+- after finish all value we will return the set. 
