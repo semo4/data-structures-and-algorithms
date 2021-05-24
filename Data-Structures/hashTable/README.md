@@ -27,3 +27,28 @@ A hash table is a data structure that allows key-value pairs to be stored within
 
 - contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
 - hash: takes in an arbitrary key and returns an index in the collection.
+
+
+
+
+
+
+
+##### code 31 
+# Challenge Summary
+<!-- Description of the challenge -->
+- Write a function that accepts a lengthy string parameter and  return the first word to occur more than once in that provided string.
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+![images](assets/repeated.jpg)
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- The algorithm will utilize a hash table to keep track of all the words that are seen so far. The current word that is being examined will be checked against the hash table to see if the word exist in the table as a key. If it exists, then that means the word has been repeated so we return it. Otherwise move on the next word. If we have not encountered any repeated word at the end when we look at every words, then return null.
+repeated()--> O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+- first defined text and store the whole string you need to check.
+- then call the function and pass the text to it
+- the function will return the repeated word.
