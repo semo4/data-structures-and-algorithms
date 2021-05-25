@@ -79,4 +79,70 @@ public class HashTableTest {
         String text = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
         assertEquals("Return was","summer",RepeatedWord.repeated(text));
     }
+
+
+
+
+
+       @Test
+    public void returnEqualLeftJoin() {
+        HashMap<String, String> tableOne = new HashMap<String, String>();
+        HashMap<String, String> tableTwo = new HashMap<String, String>();
+
+        tableOne.put("fond","enamored");
+        tableOne.put("wrath","anger");
+        tableOne.put("diligent","employed");
+        tableOne.put("outfit","garb");
+        tableOne.put("guide","usher");
+
+        tableTwo.put("fond","averse");
+        tableTwo.put("wrath","delight");
+        tableTwo.put("diligent","idle");
+        tableTwo.put("guide","follow");
+        tableTwo.put("flow","jam");
+
+        LeftJoin l = new LeftJoin();
+        String [][] res = l.leftJoin(tableOne,tableTwo);
+        ArrayList exp = new ArrayList();
+        exp.add("diligent");
+        exp.add("employed");
+        exp.add("idle");
+
+        assertEquals("Return the first value ",exp, Arrays.asList(res[0]));
+    }
+
+    @Test
+    public void returnEmptyLeftJoin() {
+        HashMap<String, String> tableOne = new HashMap<String, String>();
+        HashMap<String, String> tableTwo = new HashMap<String, String>();
+        LeftJoin l = new LeftJoin();
+        String [][] res = l.leftJoin(tableOne,tableTwo);
+        assertNull("Return null", res);
+    }
+
+    @Test
+    public void returnOneValueLeftJoin() {
+        HashMap<String, String> tableOne = new HashMap<String, String>();
+        HashMap<String, String> tableTwo = new HashMap<String, String>();
+        tableOne.put("wrath1","anger");
+        tableOne.put("diligent1","employed");
+        tableOne.put("outfit1","garb");
+        tableOne.put("guide1","usher");
+        tableOne.put("fond","enamored");
+
+        tableTwo.put("wrath","delight");
+        tableTwo.put("diligent","idle");
+        tableTwo.put("guide","follow");
+        tableTwo.put("flow","jam");
+        tableTwo.put("fond","averse");
+
+        LeftJoin l = new LeftJoin();
+        String [][] res = l.leftJoin(tableOne,tableTwo);
+        ArrayList exp = new ArrayList();
+        exp.add("fond");
+        exp.add("enamored");
+        exp.add("averse");
+
+        assertEquals("Return the first value ",exp, Arrays.asList(res[4]));
+    }
 }
