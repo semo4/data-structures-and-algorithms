@@ -52,3 +52,26 @@ repeated()--> O(n)
 - first defined text and store the whole string you need to check.
 - then call the function and pass the text to it
 - the function will return the repeated word.
+
+
+************************************************************************************
+# code 33
+************************************************************************************
+# Hashmap LEFT JOIN
+<!-- Short summary or background information -->
+Implement a simplified LEFT JOIN for 2 Hashmaps
+
+## Challenge
+<!-- Description of the challenge -->
+Write a function that LEFT JOIN two hashmaps into a single 2d array. The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values. The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values. LEFT JOIN means all the values in the first hashmap are returned, and if values exist in the “right” hashmap, they are appended to the result row. If no values exist in the right hashmap, then some flavor of NULL should be appended to the result row.
+
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+My solution involves going through each entry of the synonym hashmap and check its keys against the antonym hashmap. Since left join means that all of the entries from the synonym table will be in the result array but not all of the entries from the antonym table will be in the result. Therefore we would check the keys of the synonym table against the antonym and if the key exists in both, then we include both values from both table in the resulting array. Otherwise, include only the value from the synonym table and have null as the value of the antonym table for that key. 
+- LeftJoin() -----> O(n)
+- Space  -------------> O(n)
+## Solution
+<!-- Embedded whiteboard image -->
+![images](assets/leftjoin.jpg)
+
