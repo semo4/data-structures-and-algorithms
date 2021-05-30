@@ -1,9 +1,6 @@
 package com.example.graph;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Graph{
     List<Node> graph;
@@ -78,5 +75,29 @@ public class Graph{
             }
             return res;
         }
+    }
+
+
+    public Set<Node> breadthFirst(Node start){
+        if(graph.size() == 0){
+            Set<Node> visited = new HashSet<Node>();
+            return visited;
+        }
+        Queue<Node> visitedNode = new LinkedList<Node>();
+        Set<Node> visited = new HashSet<Node>();
+        visitedNode.add(start);
+        visited.add(start);
+        while(!visitedNode.isEmpty()){
+            Node current = visitedNode.peek();
+            for(Edge edge:current.getNeighbors()){
+                Node node = edge.node;
+                if(!visited.contains(node)){
+                    visitedNode.add(node);
+                    visited.add(node);
+                }
+            }
+            visitedNode.remove();
+        }
+        return visited;
     }
 }

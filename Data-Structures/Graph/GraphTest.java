@@ -3,6 +3,7 @@ package com.example.graph;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 public class GraphTest {
@@ -117,8 +118,65 @@ public class GraphTest {
     @Test
     public void nullNodeGraph() {
         Graph g = new Graph();
-
         assertNull("Add Edge successfully to graph",g.print());
     }
+
+    @Test
+    public void testBFSOneNodeWithoutEdge() {
+        Graph g = new Graph();
+
+        Node a = g.addNodes("a");
+        Node b = g.addNodes("b");
+        Node c = g.addNodes("c");
+        Node d = g.addNodes("d");
+        Node e = g.addNodes("e");
+        System.out.println(g.breadthFirst(a));
+        Set<Node> res = g.breadthFirst(a);
+        String result = "";
+        for(Node stock : res){
+            result += stock.value+" ";
+        }
+        assertEquals("Add Edge successfully to graph","a ",result);
+    }
+
+    @Test
+    public void testBFSNodeWithEdge() {
+        Graph g = new Graph();
+
+        Node a = g.addNodes("a");
+        Node b = g.addNodes("b");
+        Node c = g.addNodes("c");
+        Node d = g.addNodes("d");
+        Node e = g.addNodes("e");
+        g.addEdges(a,b,10);
+        g.addEdges(a,c,15);
+        g.addEdges(a,d,8);
+        g.addEdges(a,e,8);
+        g.addEdges(b,d,5);
+        g.addEdges(c,d,8);
+        g.addEdges(d,a,8);
+        Set<Node> res = g.breadthFirst(a);
+        String result = "";
+        for(Node stock : res){
+            result += stock.value+" ";
+        }
+        assertEquals("Add Edge successfully to graph","c e d b a ",result);
+    }
+
+    @Test
+    public void testBFSNodeNotInGraph() {
+        Graph g = new Graph();
+
+        Node a = new Node("a");
+        Set<Node> res = g.breadthFirst(a);
+        String result = "";
+        for(Node stock : res){
+            result += stock.value+" ";
+        }
+        assertEquals("Add Edge successfully to graph","",result);
+    }
+
+
+
 
 }
