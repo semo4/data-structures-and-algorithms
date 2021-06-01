@@ -179,4 +179,71 @@ public class GraphTest {
 
 
 
+
+
+      @Test
+    public void testDFSOneNodeWithoutEdge() {
+        Graph g = new Graph();
+
+        Node a = g.addNodes("a");
+        Node b = g.addNodes("b");
+        Node c = g.addNodes("c");
+        Node d = g.addNodes("d");
+        Node e = g.addNodes("e");
+        
+        List<Node> res = g.depthFirst(a);
+        String result = "";
+        for(Node stock : res){
+            result += stock.value+" ";
+        }
+        assertEquals("Add Edge successfully to graph","a ",result);
+    }
+
+    @Test
+    public void testDFSNodeWithEdge() {
+        Graph graph = new Graph();
+        Node a = graph.addNodes("a");
+        Node b = graph.addNodes("b");
+        Node c = graph.addNodes("c");
+        Node d = graph.addNodes("d");
+        Node e = graph.addNodes("e");
+        Node f = graph.addNodes("f");
+        Node h = graph.addNodes("h");
+        Node g = graph.addNodes("g");
+        graph.addEdges(a,b,10);
+        graph.addEdges(a,d,15);
+        graph.addEdges(b,c,8);
+        graph.addEdges(b,d,8);
+        graph.addEdges(c,g,5);
+        graph.addEdges(d,f,8);
+        graph.addEdges(d,h,8);
+        graph.addEdges(d,e,8);
+        graph.addEdges(f,h,8);
+
+        List<Node> res = graph.depthFirst(a);
+
+        String result = "";
+        for (int i = 0; i < res.size(); i++) {
+            result += res.get(i).value+" ";
+        }
+
+        assertEquals("Add Edge successfully to graph","a d e h f b c g ",result);
+    }
+
+    @Test
+    public void testBFSNodeNotInGraph() {
+        Graph g = new Graph();
+
+        Node a = new Node("a");
+        List<Node> res = g.depthFirst(a);
+        String result = "";
+        for(Node stock : res){
+            result += stock.value+" ";
+        }
+        assertEquals("Add Edge successfully to graph","",result);
+    }
+
+
+
+
 }

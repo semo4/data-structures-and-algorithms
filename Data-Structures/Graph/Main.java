@@ -50,7 +50,32 @@ public class Main {
 //        System.out.println(res);
 
 
+     Graph graph = new Graph();
+        Node a = graph.addNodes("a");
+        Node b = graph.addNodes("b");
+        Node c = graph.addNodes("c");
+        Node d = graph.addNodes("d");
+        Node e = graph.addNodes("e");
+        Node f = graph.addNodes("f");
+        Node h = graph.addNodes("h");
+        Node g = graph.addNodes("g");
+        graph.addEdges(a,b,10);
+        graph.addEdges(a,d,15);
+        graph.addEdges(b,c,8);
+        graph.addEdges(b,d,8);
+        graph.addEdges(c,g,5);
+        graph.addEdges(d,f,8);
+        graph.addEdges(d,h,8);
+        graph.addEdges(d,e,8);
+        graph.addEdges(f,h,8);
 
+        List<Node> res = graph.depthFirst(a);
+
+        String result = "";
+        for (int i = 0; i < res.size(); i++) {
+            result += res.get(i).value+" ";
+        }
+        System.out.println(result);
 
     }
 }

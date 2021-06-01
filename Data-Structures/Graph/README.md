@@ -91,3 +91,28 @@ Write a function which takes in a graph, and an array of city names. Return whet
 - call the function getEdge 
 - send graph and array of cities to the getEdge
 - return the result
+
+
+#####################################################################
+
+# Challenge Summary
+<!-- Description of the challenge -->
+Create a function that accepts an adjacency list as a graph and conducts a depth first traversal. Return a collectio of nodes in their pre-order depth-first traversal order.
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+- [Whiteboard image](https://drive.google.com/file/d/1T9EMNKU-EmSsWIEBmqSGUGWs9BfPFLqu/view?usp=sharing)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Similar to how we did breadth-first traversal on a graph, instead of utilizing a queue to keep track of which to nodes to visit next, we will use a stack instead. Essentially, at every node that we visit, we first would put the node onto a list that would be our return collection. Then we would put all of its neighbors onto a stack and also a set that will keep track of which nodes we already visited. At the next iteration, we would just pop a single node off of the stack and that would be our current node. Then we would just repeat the process until the stack is empty in which we traverse every nodes that can be reached in the graph.
+
+This solution will takes O(n) time where n is the total number of nodes in the graph since we might have to traverse through all of the nodes. Space-wise, it would be O(n) as well in the case of where the graph is secretly a linked list and we would have to put all of the nodes onto the stack before we start to pop nodes off.
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+- create graph object 
+- add node to graph 
+- add edge between node with weight 
+- call the BFDFSS function 
+- print the result after the DFS algorithm

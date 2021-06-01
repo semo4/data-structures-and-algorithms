@@ -100,4 +100,30 @@ public class Graph{
         }
         return visited;
     }
+
+        public List<Node> depthFirst(Node start){
+        if(graph.size() == 0){
+            List<Node> result = new LinkedList<Node>();
+            return result;
+        }
+        Stack<Node> visitedNode = new Stack<Node>();
+        Set<Node> visited = new HashSet<Node>();
+        List<Node> result = new LinkedList<Node>();
+        visitedNode.push(start);
+        visited.add(start);
+
+        while(!visitedNode.isEmpty()){
+            Node current = visitedNode.pop();
+            System.out.println("****" + current.value);
+            result.add(current);
+            for(Edge edge:current.getNeighbors()){
+                Node node = edge.node;
+                if(!visited.contains(node)){
+                    visitedNode.push(node);
+                    visited.add(node);
+                }
+            }
+        }
+        return result;
+    }
 }
