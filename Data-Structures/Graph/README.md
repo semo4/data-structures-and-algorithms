@@ -65,3 +65,29 @@ This solution would take O(n) time since there is a chance that we will visit ev
 - add edge between node with weight 
 - call the BFS function 
 - print the result after the BFS algorithm
+
+
+##########################################################################
+# Challenge Summary
+<!-- Description of the challenge -->
+Write a function which takes in a graph, and an array of city names. Return whether or not the full trip is possible with direct flights and how much it would cost.
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+- [Whiteboard image](https://drive.google.com/file/d/1N8YxkGQ9BlwxAZDYoVli7QJGALM9qJNE/view?usp=sharing)
+
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+- getEdge() -----> O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+
+- add node to graph
+- add edge between node and the weight for the trip from one node to it's neighbors
+- create object from GetEdge class
+- call the function getEdge 
+- send graph and array of cities to the getEdge
+- return the result
