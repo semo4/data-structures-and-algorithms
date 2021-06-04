@@ -140,10 +140,10 @@ public class BinaryTree<T> extends BinarySearchTree{
         return s;
     }
   
-     public boolean isSymmetric(TreeNode root) {
+     public boolean isSymmetric(Node root) {
         return mirror(root, root);    
     }
-    public boolean mirror(TreeNode left, TreeNode right){
+    public boolean mirror(Node left, Node right){
         if(left == null && right == null){
             return true;
         }
@@ -152,6 +152,39 @@ public class BinaryTree<T> extends BinarySearchTree{
         }
         return (left.data == right.data) && mirror(left.left, right.right) && mirror(left.right, right.left); 
    
+    }
+  
+   public boolean isValidBST(Node root) {
+        
+         return isBST(root,null,null ) ;
+    }
+    
+    public boolean isBST(Node root, Node left, Node right){
+        if (root == null)
+            return true;
+         if (left != null && root.data <=left.data)
+            return false;
+        if (right != null && root.data >= right.data)
+            return false;
+        
+        return isBST(root.left, left, root) &&isBST(root.right, root, right);
+    }
+  
+      public int maxDepth(Node root) {
+        if (root == null) 
+          return 0; 
+
+    // Get the depth of the left and right subtree 
+    // using recursion.
+        int leftDepth = maxDepth(root.left); 
+        int rightDepth = maxDepth(root.right); 
+
+    // Choose the larger one and add the root to it.
+       if (leftDepth > rightDepth) 
+        return (leftDepth + 1); 
+      else 
+       return (rightDepth + 1); 
+     
     }
 
 }
