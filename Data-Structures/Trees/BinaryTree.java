@@ -186,36 +186,41 @@ public class BinaryTree<T> extends BinarySearchTree{
        return (rightDepth + 1); 
      
     }
-  public List<List<Integer>> levelOrder(Node root) {
-    
-        Queue<Node> queue = new LinkedList<Node>();
-        
-        queue.add(root);
+  public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> values = new ArrayList<List<Integer>>();
-        List<Integer> items = new ArrayList<>();
-        items.add(root.data);
-         values.add(items);
-        while(!queue.isEmpty()){
-            Node curr = queue.poll();
-             List<Integer> item = new ArrayList<>();
-       
-            if(curr.left != null){
-                 queue.add(curr.left);
-                 item.add(curr.left.data);
-            }
-            
-             if(curr.right != null){
-                 queue.add(curr.right);
-                  item.add(curr.right.data);
-            }
-            if(!item.isEmpty()){
-                 values.add(item);
-            }
-        
-           
+        if(root ==null){
+            return values;
         }
-        
-        return values;
+        if(root!= null){
+            Queue<TreeNode> queue = new LinkedList<TreeNode>();
+            queue.add(root);
+           
+            List<Integer> items = new ArrayList<>();
+            items.add(root.val);
+             values.add(items);
+            while(!queue.isEmpty()){
+                TreeNode curr = queue.poll();
+                 List<Integer> item = new ArrayList<>();
+
+                if(curr.left != null){
+                     queue.add(curr.left);
+                     item.add(curr.left.val);
+                }
+
+                 if(curr.right != null){
+                     queue.add(curr.right);
+                      item.add(curr.right.val);
+                }
+                if(!item.isEmpty()){
+                     values.add(item);
+                }
+
+
+            }
+
+            
+        }
+       return values;
     }
 
 }
