@@ -186,6 +186,37 @@ public class BinaryTree<T> extends BinarySearchTree{
        return (rightDepth + 1); 
      
     }
+  public List<List<Integer>> levelOrder(Node root) {
+    
+        Queue<Node> queue = new LinkedList<Node>();
+        
+        queue.add(root);
+        List<List<Integer>> values = new ArrayList<List<Integer>>();
+        List<Integer> items = new ArrayList<>();
+        items.add(root.data);
+         values.add(items);
+        while(!queue.isEmpty()){
+            Node curr = queue.poll();
+             List<Integer> item = new ArrayList<>();
+       
+            if(curr.left != null){
+                 queue.add(curr.left);
+                 item.add(curr.left.data);
+            }
+            
+             if(curr.right != null){
+                 queue.add(curr.right);
+                  item.add(curr.right.data);
+            }
+            if(!item.isEmpty()){
+                 values.add(item);
+            }
+        
+           
+        }
+        
+        return values;
+    }
 
 }
 
