@@ -308,6 +308,63 @@ public class BinaryTree<T> extends BinarySearchTree{
             }
         }
     }
+  
+    public void zigzagPrint(Node root){
+        if(root == null){
+            return;
+        }
+        Stack<Node> currentLevel = new Stack<>();
+        Stack<Node> nextLevel = new Stack<>();
+
+        currentLevel.push(root);
+        boolean leftToRight = true;
+
+        while(!currentLevel.isEmpty()){
+            Node curr = currentLevel.pop();
+
+            System.out.print(curr.data +" ");
+
+            if(leftToRight){
+                if(curr.left != null){
+                    nextLevel.push(curr.left);
+                }
+                if(curr.right != null){
+                    nextLevel.push(curr.right);
+                }
+            }else{
+                if(curr.right != null){
+                    nextLevel.push(curr.right);
+                }
+                if(curr.left != null){
+                    nextLevel.push(curr.left);
+                }
+            }
+            if(currentLevel.isEmpty()){
+                leftToRight = !leftToRight;
+                Stack<Node> temp = currentLevel;
+                currentLevel = nextLevel;
+                nextLevel = temp;
+            }
+        }
+    }
+
+    public boolean isMinHeap(int [] arr){
+        int n = arr.length-1;
+
+        for (int i = (n/2-1); i >=0 ; i--) {
+            if(arr[i] > arr[ 2*i + 1 ]){
+                return false;
+            }
+            if(2*i +2 < n){
+                if(arr[i] > arr[ 2*i + 2 ]){
+                    return false;
+                }
+            }
+
+        }
+        return true;
+    }
+
 
 }
 
