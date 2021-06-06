@@ -140,6 +140,8 @@ public class BinaryTree<T> extends BinarySearchTree{
         return s;
     }
   
+  // qusetion solved tranning 
+  
      public boolean isSymmetric(Node root) {
         return mirror(root, root);    
     }
@@ -221,6 +223,90 @@ public class BinaryTree<T> extends BinarySearchTree{
             
         }
        return values;
+    }
+  
+    public int treeSum(Node curr){
+          if(curr == null){
+              return 0;
+          }
+          int leftSum = treeSum(curr.left);
+          int rightSum = treeSum(curr.right);
+
+          return ((Integer)curr.data + leftSum+ rightSum);
+      }
+
+    public  boolean inTree(Node curr, int value){
+        if(curr== null){
+            return false;
+        }
+        boolean inLeft = inTree(curr.left, value);
+        boolean inRight = inTree(curr.right, value);
+        return (Integer)curr.data == value || inLeft || inRight;
+    }
+
+    public void reverseTree(Node root){
+        if(root == null){
+            return ;
+        }
+        Node temp = root.right;
+        root.right = root.left;
+        root.left = temp;
+
+        reverseTree(root.left);
+        reverseTree(root.right);
+    }
+
+    public boolean hasPathSum(Node root, int targetSum){
+        if(root == null){
+            return false;
+        }
+        targetSum -= (Integer)root.data;
+        if(targetSum ==0 && root.left == null && root.right == null){
+            return true;
+        }
+        boolean left = hasPathSum(root.left, targetSum);
+        boolean right = hasPathSum(root.right, targetSum);
+
+        return left || right;
+
+
+    }
+
+    public boolean isSameTree(Node rootOne, Node rootTwo){
+        if(rootOne == null && rootTwo == null){
+            return true;
+        }
+        if(rootOne == null || rootTwo == null){
+            return false;
+        }
+
+        return (Integer)rootOne.data == (Integer)rootTwo.data && isSameTree(rootOne.left, rootTwo.left) && isSameTree(rootOne.right, rootTwo.right);
+    }
+  
+    public Node mergeTrees(Node t1, Node t2){
+        if(t1== null & t2!=null){
+            t1=t2;
+        }else{
+            merge(t1,t2);
+        }
+        return t1;
+    }
+
+    public void merge(Node t1, Node t2){
+        if(t1== null & t2!=null){
+            t1=t2;
+        }else if (t1 != null & t2 !=null){
+            (Integer)t1.data += (Integer)t2.data;
+            merge(t1.left, t2.left);
+            merge(t1.right, t2.right);
+
+            if(t1.left == null && t2.left!=null){
+                t1.left = t2.left;
+            }
+            if(t1.right == null && t2.right!=null){
+                t1.right = t2.right;
+            }
+        }
     }
 
 }
